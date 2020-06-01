@@ -10,4 +10,17 @@ class Property extends Model
     protected $fillable =['title','Property Type','description'];
 
 
+    public function images(){
+
+        return $this->hasMany(Image::class);
+
+    }
+
+    public function favorite()
+    {
+        return $this->morphOne('App\Favorite', 'favoriteable');
+    }
+
+
+
 }

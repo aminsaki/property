@@ -19,6 +19,21 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+
+    /**
+     * Get the user's favoriteable.
+     */
+    public function favorite()
+    {
+        return $this->morphOne('App\Favorite', 'favoriteable');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,4 +51,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 }
