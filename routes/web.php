@@ -13,6 +13,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+
+    #panel controller
+    Route::get('/panel', 'PanelController@index')->name('home');
+
+    # Property controller
+    Route::get('property/index', 'PropertyController@index');
+    Route::post('property/create', 'PropertyController@create');
+    Route::get('property/show', 'PropertyController@show');
+
+
+
+
+
 });
+
+Auth::routes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@ class Image extends Model
 {
     protected $table ="images";
 
-    protected  $fillable=['url'];
+    protected  $fillable=['url','property_id','title'];
 
     public function property(){
 

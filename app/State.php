@@ -9,4 +9,10 @@ class State extends Model
     protected $table='states';
     protected $fillable=['title'];
 
+
+    public function Areas(){
+
+        return $this->hasMany(Area::class);
+    }
+
 }
