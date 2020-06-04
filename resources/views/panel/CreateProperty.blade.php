@@ -5,11 +5,17 @@
         <div class="row text-right">
             <div class="col-md-3"></div>
             <div class="col-md-6 ">
-                @if(session()->has('errors'))
+                @if(session()->has('massages'))
                         <div class="alert alert-success text-center" >
-                           {{session('errors')}}
+                           {{session('massages')}}
                     </div>
                 @endif
+                    @if(count($errors) > 0 )
+
+                    @foreach ($errors->all() as $errors)
+                            <div class="alert alert-success text-center" >{{ $errors }}</div>
+                        @endforeach
+                    @endif
 
 
                     <a href="{{url('property/show')}}" class="btn btn-secondary text-right ">مشاهد لیست درج شده</a>

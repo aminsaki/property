@@ -63,6 +63,10 @@
                                 </form>
                             </div>
                         </li>
+                        <li class="nav">
+                            <a href="{{url('/panel')}}">مشاهد پنل</a>
+
+                        </li>
                     @endguest
                 </ul>
             </div>

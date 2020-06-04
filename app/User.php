@@ -20,13 +20,10 @@ class User extends Authenticatable
     ];
 
 
-    /**
-     * Get the user's favoriteable.
-     */
-    public function favorite()
-    {
-        return $this->morphOne('App\Favorite', 'favoriteable');
-    }
+     public function propertys(){
+
+         return $this->belongsToMany(Property::class);
+     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -51,6 +48,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 
 
 }

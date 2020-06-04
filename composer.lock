@@ -4433,7 +4433,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Send PHP errors to Flare",
+            "description": "Send PHP  to Flare",
             "homepage": "https://github.com/facade/flare-client-php",
             "keywords": [
                 "exception",
@@ -4589,7 +4589,7 @@
             },
             "suggest": {
                 "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
-                "whoops/soap": "Formats errors as SOAP responses"
+                "whoops/soap": "Formats  as SOAP responses"
             },
             "type": "library",
             "extra": {

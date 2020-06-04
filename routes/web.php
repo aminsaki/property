@@ -25,6 +25,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('property/index', 'PropertyController@index');
     Route::post('property/create', 'PropertyController@create');
     Route::get('property/show', 'PropertyController@show');
+    Route::get('property/confirmation/{id}', 'PropertyController@confirmation');
+    #Favorite Controller
+    Route::get('favorite/add/{id}','FavoriteController@create');
+    Route::get('favorite/show','FavoriteController@show');
+    Route::get('favorite/delete/{id}','FavoriteController@delete');
+
 
 
 

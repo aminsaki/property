@@ -16,6 +16,7 @@ class CreatePropertysTable extends Migration
         Schema::create('propertys', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->enum('status',['true','false'])->default('false');
             $table->text('description');
             $table->timestamps();
         });
@@ -24,6 +25,11 @@ class CreatePropertysTable extends Migration
             $table->unsignedBigInteger('categorie_id');
 
             $table->foreign('categorie_id')->references('id')->on('categories');
+        });
+        Schema::table('propertys', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
